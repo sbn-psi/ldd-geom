@@ -7245,632 +7245,247 @@
 
 <!-- Vectors for the Specific_Position_Vectors class -->
 
-<!-- spacecraft, target, central_body  Cartesian vectors  -->
 
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Central_Body_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Central_Body_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Central_Body_To_Spacecraft 
-            is a linear, rectangular coordinates vector from the center 
-            of mass of the central body (e.g., planet) to the spacecraft. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
+<DD_Class>
+    <name>Vector_Cartesian_Position_By_Type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Vector_Cartesian_Position_By_Type</local_identifier>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>A linear, rectangular coordinates vector from the points indicated by the vector type. 
+        While the class Coordinate_System_Identification is optional, it must be used 
+        here if the coordinate system has not been specified in the enclosing class.            
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+        <identifier_reference>vector_position_type</identifier_reference>
+        <reference_type>attribute_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+        <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
+        <reference_type>component_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
 
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Central_Body_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Central_Body_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Central_Body_To_Target 
-            is a linear, rectangular coordinates vector from the center 
-            of mass of the central body (e.g., planet) to the target specified 
-            in the parent Geometry_Orbiter class. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
+</DD_Class>
 
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Spacecraft_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Spacecraft_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Spacecraft_To_Target 
-            is a linear, rectangular coordinates vector from the spacecraft
-            to the target specified in the parent Geometry_Orbiter class. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
+<DD_Class>
+    <name>Vector_Planetocentric_Position_By_Type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Vector_Planetocentric_Position_By_Type</local_identifier>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>a spherical position vector in Planetocentric coordinates.  
+        It extends from and to the points indicated by the vector type
+        While the class Coordinate_System_Identification is optional, it must be used 
+        here if the coordinate system has not been specified in the enclosing class.            
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+        <identifier_reference>vector_position_type</identifier_reference>
+        <reference_type>attribute_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+        <identifier_reference>Vector_Planetocentic_Position_Extended_Base</identifier_reference>
+        <reference_type>component_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+</DD_Class>
 
-<!-- spacecraft, target, central_body  Planetocentric vectors  -->
+<DD_Attribute>
+    <name>vector_position_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>vector_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>Placeholder</definition>
+    <DD_Value_Domain>
+        <enumeration_flag>true</enumeration_flag>
+        <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        <DD_Permissible_Value>
+            <value>Central_Body_To_Spacecraft</value>
+            <value_meaning> from the center 
+                of mass of the central body (e.g., planet) to the spacecraft. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Central_Body_To_Target</value>
+            <value_meaning>from the center 
+                of mass of the central body (e.g., planet) to the target specified 
+                in the parent Geometry_Orbiter class. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Spacecraft_To_Target</value>
+            <value_meaning>from the spacecraft
+                to the target specified in the parent Geometry_Orbiter class. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>SSB_To_Central_Body</value>
+            <value_meaning>from the Solar
+                System Barycenter to the central body (e.g., planet). </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>SSB_To_Spacecraft</value>
+            <value_meaning>from the Solar
+                System Barycenter to the spacecraft. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>SSB_To_Target</value>
+            <value_meaning>from the Solar
+                System Barycenter to the target specified in the parent 
+                Geometry_Orbiter class.</value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Sun_To_Central_Body</value>
+            <value_meaning>from the Sun 
+                to the central body (e.g., planet). </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Sun_To_Spacecraft</value>
+            <value_meaning>from the Sun 
+                to the spacecraft.         </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Sun_To_Target</value>
+            <value_meaning>from the Sun 
+                to the target specified in the parent Geometry_Orbiter class.</value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Earth_To_Central_Body</value>
+            <value_meaning>from the Earth 
+                to the central body (e.g., planet). </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Earth_To_Spacecraft</value>
+            <value_meaning>from the Earth 
+                to the spacecraft.         </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Earth_To_Target</value>
+            <value_meaning>from the Earth 
+                to the target specified in the parent Geometry_Orbiter class.</value_meaning>
+        </DD_Permissible_Value>
+    </DD_Value_Domain>
+</DD_Attribute>
 
-    <DD_Class>
-        <name>Vector_Planetocentric_Position_Central_Body_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Planetocentric_Position_Central_Body_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Planetocentric_Position_Central_Body_To_Spacecraft
-            is a spherical position vector in Planetocentric coordinates.  
-            It extends from the center of mass of the central body (e.g., 
-            planet) to the spacecraft. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Planetocentric_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
+<DD_Class>
+    <name>Vector_Cartesian_Velocity_By_Type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Vector_Cartesian_Velocity_By_Type</local_identifier>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>a velocity vector in rectangular coordinates that
+        gives the velocity of an object with respect to another object, determined
+        by the vector_velocity_type.
+        While the class Coordinate_System_Identification is optional, it must be used 
+        here if the coordinate system has not been specified in the enclosing class.            
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+        <identifier_reference>vector_type</identifier_reference>
+        <reference_type>attribute_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+        <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
+        <reference_type>component_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
 
-    <DD_Class>
-        <name>Vector_Planetocentric_Position_Central_Body_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Planetocentric_Position_Central_Body_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Planetocentric_Position_Central_Body_To_Target 
-            is a spherical position vector in Planetocentric coordinates.  
-            It extends from the center of mass of the central body (e.g., 
-            planet) to the target specified in the parent Geometry_Orbiter class. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Planetocentric_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
+</DD_Class>
 
-    <DD_Class>
-        <name>Vector_Planetocentric_Position_Spacecraft_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Planetocentric_Position_Spacecraft_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Planetocentric_Position_Spacecraft_To_Target 
-            is a spherical position vector in Planetocentric coordinates.  
-            It extends from the spacecraft to the target specified in the parent 
-            Geometry_Orbiter class.       
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Planetocentric_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
+<DD_Class>
+    <name>Vector_Planetocentric_Velocity_By_Type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Vector_Planetocentric_Velocity_By_Type</local_identifier>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>a spherical velocity vector in Planetocentric coordinates that 
+        gives the velocity ofan object with respect to another object, determined
+        by the vector_velocity_type.
+        While the class Coordinate_System_Identification is optional, it must be used 
+        here if the coordinate system has not been specified in the enclosing class.  
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+        <identifier_reference>Vector_Planetocentic_Position_Extended_Base</identifier_reference>
+        <reference_type>component_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+</DD_Class>
 
-<!-- SSB vectors  -->
 
-    <DD_Class>
-        <name>Vector_Cartesian_Position_SSB_To_Central_Body</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_SSB_To_Central_Body</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_SSB_To_Central_Body
-            is a linear, rectangular coordinates vector from the Solar
-            System Barycenter to the central body (e.g., planet). 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_SSB_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_SSB_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_SSB_To_Spacecraft
-            is a linear, rectangular coordinates vector from the Solar
-            System Barycenter to the spacecraft. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>            
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_SSB_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_SSB_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_SSB_To_Target
-            is a linear, rectangular coordinates vector from the Solar
-            System Barycenter to the target specified in the parent 
-            Geometry_Orbiter class.         
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- Heliocentric vectors  -->
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Sun_To_Central_Body</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Sun_To_Central_Body</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Sun_To_Central_Body 
-            is a linear, rectangular coordinates vector from the Sun 
-            to the central body (e.g., planet). 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Sun_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Sun_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Sun_To_Spacecraft 
-            is a linear, rectangular coordinates vector from the Sun 
-            to the spacecraft.         
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Sun_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Sun_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Sun_To_Target 
-            is a linear, rectangular coordinates vector from the Sun 
-            to the target specified in the parent Geometry_Orbiter class.         
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- Geocentric vectors  -->
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Earth_To_Central_Body</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Earth_To_Central_Body</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Earth_To_Central_Body 
-            is a linear, rectangular coordinates vector from the Earth 
-            to the central body (e.g., planet). 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Earth_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Earth_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Earth_To_Spacecraft 
-            is a linear, rectangular coordinates vector from the Earth 
-            to the spacecraft.         
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Position_Earth_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Position_Earth_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Position_Earth_To_Target 
-            is a linear, rectangular coordinates vector from the Earth 
-            to the target specified in the parent Geometry_Orbiter class.         
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- Vectors for the Specific_Velocity_Vectors class -->
-
-<!-- spacecraft Cartesian velocity vectors  -->
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the spacecraft with respect to the  
-            central body (e.g., planet). 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the spacecraft with respect to the 
-            target specified in the parent Geometry_Orbiter class.         
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the spacecraft with respect to Earth. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the spacecraft with respect to the 
-            Solar System Barycenter. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun</local_identifier>
-        <submitter_name>Anne Raugh</submitter_name>
-        <definition>
-            Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun is a 
-            velocity vector in rectangular coordinates that gives the
-            velocity of the spacecraft with respect to the center of 
-            the Sun.
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- target Cartesian velocity vectors  -->
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Target_Relative_To_Central_Body</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Target_Relative_To_Central_Body</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Target_Relative_To_Central_Body 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the designated target with respect to the  
-            central body (e.g., planet). 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the designated target with respect to the  
-            spacecraft. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Target_Relative_To_Earth</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Target_Relative_To_Earth</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Target_Relative_To_Earth 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the designated target with respect to Earth. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Vector_Cartesian_Velocity_Target_Relative_To_SSB</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Target_Relative_To_SSB</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Cartesian_Velocity_Target_Relative_To_SSB 
-            is a velocity vector in rectangular coordinates that
-            gives the velocity of the designated target with respect  
-            to the Solar System Barycenter. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-     <DD_Class>
-        <name>Vector_Cartesian_Velocity_Target_Relative_To_Sun</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Cartesian_Velocity_Target_Relative_To_Sun</local_identifier>
-        <submitter_name>Anne Raugh</submitter_name>
-        <definition>
-            Vector_Cartesian_Velocity_Target_Relative_To_Sun is a 
-            velocity vector in rectangular coordinates that gives the
-            velocity of the designated target with respect to the center
-            of the sun.
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-         <element_flag>false</element_flag>
-         <DD_Association>
-             <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- Planetocentric velocity vectors -->
-  
-    <DD_Class>
-        <name>Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target 
-            is a spherical velocity vector in Planetocentric coordinates that 
-            gives the velocity of the spacecraft with respect to the designated 
-            target. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Planetocentric_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-  
-    <DD_Class>
-        <name>Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body 
-            is a spherical velocity vector in Planetocentric coordinates that 
-            gives the velocity of the target with respect to the central body. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Planetocentric_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-  
-    <DD_Class>
-        <name>Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft 
-            is a spherical velocity vector in Planetocentric coordinates that 
-            gives the velocity of the target with respect to the spacecraft. 
-            While the class Coordinate_System_Identification is optional, it must be used 
-            here if the coordinate system has not been specified in the enclosing class.            
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Planetocentric_Velocity_Extended_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- Vector classes for the Geometry_Orbiter class -->
-
-<!-- Vectors_Cartesian_Specific class  -->
-    
+<DD_Attribute>
+    <name>vector_velocity_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>vector_valocity_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>Placeholder</definition>
+    <DD_Value_Domain>
+        <enumeration_flag>true</enumeration_flag>
+        <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        <DD_Permissible_Value>
+            <value>Spacecraft_Relative_To_Central_Body</value>
+            <value_meaning>the velocity of the spacecraft with respect to the  
+                central body (e.g., planet). </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Spacecraft_Relative_To_Target</value>
+            <value_meaning>the velocity of the spacecraft with respect to the 
+                target specified in the parent Geometry_Orbiter class. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Spacecraft_Relative_To_Earth</value>
+            <value_meaning>the velocity of the spacecraft with respect to Earth.</value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Spacecraft_Relative_To_SSB</value>
+            <value_meaning>the velocity of the spacecraft with respect to the 
+                Solar System Barycenter. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Spacecraft_Relative_To_Sun</value>
+            <value_meaning>the
+                velocity of the spacecraft with respect to the center of 
+                the Sun.</value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Target_Relative_To_Central_Body</value>
+            <value_meaning>the velocity of the designated target with respect to the  
+                central body (e.g., planet). </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Target_Relative_To_Spacecraft</value>
+            <value_meaning>the velocity of the designated target with respect to the  
+                spacecraft. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Target_Relative_To_Earth</value>
+            <value_meaning>the velocity of the designated target with respect to Earth. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Target_Relative_To_SSB</value>
+            <value_meaning>the velocity of the designated target with respect  
+                to the Solar System Barycenter. </value_meaning>
+        </DD_Permissible_Value>
+        <DD_Permissible_Value>
+            <value>Target_Relative_To_Sun</value>
+            <value_meaning>the
+                velocity of the designated target with respect to the center
+                of the sun.</value_meaning>
+        </DD_Permissible_Value>
+    </DD_Value_Domain>
+</DD_Attribute>
+s    
     <DD_Class>
         <name>Vectors_Cartesian_Specific</name>
         <version_id>1.0</version_id>
@@ -7884,28 +7499,8 @@
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>XSChoice#</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Central_Body_To_Spacecraft</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Central_Body_To_Target</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Spacecraft_To_Target</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_SSB_To_Central_Body</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_SSB_To_Spacecraft</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_SSB_To_Target</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Sun_To_Central_Body</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Sun_To_Spacecraft</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Sun_To_Target</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Earth_To_Central_Body</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Earth_To_Spacecraft</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Earth_To_Target</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Target_Relative_To_Central_Body</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Target_Relative_To_Earth</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Target_Relative_To_SSB</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Target_Relative_To_Sun</identifier_reference>
+            <identifier_reference>Vector_Cartesian_Position_By_Type</identifier_reference>
+            <identifier_reference>Vector_Cartesian_Velocity_By_Type</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
@@ -7927,12 +7522,8 @@
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>XSChoice#</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Position_Central_Body_To_Spacecraft</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Position_Central_Body_To_Target</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Position_Spacecraft_To_Target</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft</identifier_reference>
+            <identifier_reference>Vector_Planetocentric_Position_By_Type</identifier_reference>
+            <identifier_reference>Vector_Planetocentric_Velocity_By_Type</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
