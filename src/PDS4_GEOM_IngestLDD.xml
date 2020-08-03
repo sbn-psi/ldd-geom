@@ -3019,13 +3019,13 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>target_geocentric_distance</name>
+        <name>distance_minimum</name>
         <version_id>1.0</version_id>
-        <local_identifier>target_geocentric_distance</local_identifier>
+        <local_identifier>distance_minimum</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The target_geocentric_distance attribute provides the scalar distance
-            between the center of the target and the center of the Earth.
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The distance attribute provides the smallest distance 
+                    between to objects or points.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -3035,14 +3035,13 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>minimum_target_geocentric_distance</name>
+        <name>distance_minimum</name>
         <version_id>1.0</version_id>
-        <local_identifier>minimum_target_geocentric_distance</local_identifier>
+        <local_identifier>distance_maximum</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_target_geocentric_distance attribute provides 
-            the smallest value for the distance between the center of the 
-            target and the center of the Earth during the observation.
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The distance attribute provides the largest distance 
+                    between to objects or points.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -3052,14 +3051,13 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>maximum_target_geocentric_distance</name>
+        <name>distance_at_start</name>
         <version_id>1.0</version_id>
-        <local_identifier>maximum_target_geocentric_distance</local_identifier>
+        <local_identifier>distance_at_start</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_target_geocentric_distance attribute provides 
-            the largest value for the distance between the center of the 
-            target and the center of the Earth during the observation.
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The distance attribute provides the distance 
+                    between to objects or points at the beginning of the observation.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -3069,14 +3067,13 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>start_target_geocentric_distance</name>
+        <name>distance_at_stop</name>
         <version_id>1.0</version_id>
-        <local_identifier>start_target_geocentric_distance</local_identifier>
+        <local_identifier>distance_at_stop</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_target_geocentric_distance attribute provides 
-            the scalar distance between the center of the target and the center of 
-            the Earth at the beginning of the observation (geometry_start_time_utc).
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The distance attribute provides the distance 
+                    between to objects or points at the end of the observation.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -3086,712 +3083,62 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>stop_target_geocentric_distance</name>
+        <name>distance_type</name>
         <version_id>1.0</version_id>
-        <local_identifier>stop_target_geocentric_distance</local_identifier>
+        <local_identifier>distance_type</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_target_geocentric_distance attribute provides 
-            the scalar distance between the center of the target and the center of 
-            the Earth at the end of the observation (geometry_stop_time_utc).
-        </definition>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>placeholder</definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Strng</value_data_type>
+            <DD_Permissible_Value>
+                <value>geocentric_distance</value>
+                <value_meaning>The distance
+                    between the center of the target and the center of the Earth.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>target_heliocentric_distance</value>
+                <value_meaning>The distance between the center of the target and the center of the Sun.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>target_ssb_distance</value>
+                <value_meaning>The distance between
+                    the center of the target and the Solar System Barycenter.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>spacecraft_target_center_distance</value>
+                <value_meaning>The distance between the spacecraft and the center 
+                    of the target specified in the parent Geometry_Orbiter class.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>spacecraft_target_boresight_intercept_distance</value>
+                <value_meaning>The distance between the spacecraft and the boresight vector 
+                    intercept point on the surface of the target specified in the parent 
+                    Geometry_Orbiter class.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>spacecraft_target_subspacecraft_distance</value>
+                <value_meaning>The distance between the spacecraft and the subspacecraft point on the 
+                    surface of the target specified in the parent Geometry_Orbiter class.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>spacecraft_central_body_distance</value>
+                <value_meaning>The distance
+                    between the spacecraft and the center of the central body (e.g., the center of Mars
+                    when opperating in the Mars system).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>spacecraft_geocentric_distance</value>
+                <value_meaning>The distance between the spacecraft and the center of Earth.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>spacecraft_heliocentric_distance</value>
+                <value_meaning>The distance between the spacecraft and the center of the Sun.</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute>
-        <name>target_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>target_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The target_heliocentric_distance attribute provides 
-            the scalar distance between the center of the target and the center of the Sun.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>minimum_target_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_target_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_target_heliocentric_distance attribute provides 
-            the smallest value for the distance between the center of the 
-            target and the center of the Sun during the observation.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_target_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_target_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_target_heliocentric_distance attribute provides 
-            the largest value for the distance between the center of the 
-            target and the center of the Sun during the observation.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_target_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_target_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_target_heliocentric_distance attribute provides 
-            the scalar distance between the center of the target and the center of 
-            the Sun at the beginning of the observation (geometry_start_time_utc).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_target_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_target_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_target_heliocentric_distance attribute provides 
-            the scalar distance between the center of the target and the center of 
-            the Sun at the end of the observation (geometry_stop_time_utc).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>target_ssb_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>target_ssb_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The target_ssb_distance attribute provides the scalar distance between
-            the center of the target and the Solar System Barycenter.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-    
-    <DD_Attribute>
-        <name>minimum_target_ssb_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_target_ssb_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_target_ssb_distance attribute provides 
-            the smallest value for the distance between the center of the 
-            target and the Solar System Barycenter during the observation.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_target_ssb_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_target_ssb_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_target_ssb_distance attribute provides 
-            the largest value for the distance between the center of the 
-            target and the Solar System Barycenter during the observation.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_target_ssb_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_target_ssb_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_target_ssb_distance attribute provides 
-            the scalar distance between the center of the target and the 
-            Solar System Barycenter at the beginning of the observation (geometry_start_time_utc).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_target_ssb_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_target_ssb_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_target_ssb_distance attribute provides 
-            the scalar distance between the center of the target and the 
-            Solar System Barycenter at the end of the observation (geometry_stop_time_utc).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>spacecraft_target_center_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>spacecraft_target_center_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The spacecraft_target_center_distance attribute provides 
-            the scalar distance between the spacecraft and the center 
-            of the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>minimum_spacecraft_target_center_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_spacecraft_target_center_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_spacecraft_target_center_distance attribute provides 
-            the smallest value during the observation for the distance between the spacecraft 
-            and the center of the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_spacecraft_target_center_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_spacecraft_target_center_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_spacecraft_target_center_distance attribute provides 
-            the largest value during the observation for the distance between the spacecraft 
-            and the center of the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_spacecraft_target_center_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_spacecraft_target_center_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_spacecraft_target_center_distance attribute provides 
-            the scalar distance at the beginning of the observation (geometry_start_time_utc)
-            between the spacecraft and the center of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_spacecraft_target_center_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_spacecraft_target_center_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_spacecraft_target_center_distance attribute provides 
-            the scalar distance at the end of the observation (geometry_stop_time_utc)
-            between the spacecraft and the center of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>spacecraft_target_boresight_intercept_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>spacecraft_target_boresight_intercept_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The spacecraft_target_boresight_intercept_distance attribute provides 
-            the scalar distance between the spacecraft and the boresight vector 
-            intercept point on the surface of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>minimum_spacecraft_target_boresight_intercept_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_spacecraft_target_boresight_intercept_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_spacecraft_target_boresight_intercept_distance attribute provides 
-            the smallest value during the observation for the distance between the spacecraft and
-            the boresight vector intercept point on the surface of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_spacecraft_target_boresight_intercept_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_spacecraft_target_boresight_intercept_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_spacecraft_target_boresight_intercept_distance attribute provides 
-            the largest value during the observation for the distance between the spacecraft and
-            the boresight vector intercept point on the surface of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_spacecraft_target_boresight_intercept_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_spacecraft_target_boresight_intercept_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_spacecraft_target_boresight_intercept_distance attribute provides 
-            the scalar distance at the beginning of the observation (geometry_start_time_utc)
-            between the spacecraft and the boresight vector intercept point on the surface of 
-            the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_spacecraft_target_boresight_intercept_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_spacecraft_target_boresight_intercept_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_spacecraft_target_boresight_intercept_distance attribute provides 
-            the scalar distance at the end of the observation (geometry_stop_time_utc)
-            between the spacecraft and the boresight vector intercept point on the surface of 
-            the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>spacecraft_target_subspacecraft_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>spacecraft_target_subspacecraft_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The spacecraft_target_subspacecraft_distance attribute provides 
-            the scalar distance between the spacecraft and the subspacecraft point on the 
-            surface of the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>minimum_spacecraft_target_subspacecraft_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_spacecraft_target_subspacecraft_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_spacecraft_target_subspacecraft_distance attribute provides 
-            the smallest value during the observation for the distance between the spacecraft and 
-            the subspacecraft point on the surface of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_spacecraft_target_subspacecraft_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_spacecraft_target_subspacecraft_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_spacecraft_target_subspacecraft_distance attribute provides 
-            the largest value during the observation for the distance between the spacecraft and 
-            the subspacecraft point on the surface of the target specified in the parent 
-            Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_spacecraft_target_subspacecraft_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_spacecraft_target_subspacecraft_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_spacecraft_target_subspacecraft_distance attribute provides 
-            the scalar distance at the beginning of the observation (geometry_start_time_utc)
-            between the spacecraft and the subspacecraft point on the surface of 
-            the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_spacecraft_target_subspacecraft_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_spacecraft_target_subspacecraft_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_spacecraft_target_subspacecraft_distance attribute provides 
-            the scalar distance at the end of the observation (geometry_stop_time_utc)
-            between the spacecraft and the subspacecraft point on the surface of 
-            the target specified in the parent Geometry_Orbiter class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>spacecraft_central_body_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>spacecraft_central_body_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The spacecraft_central_body_distance attribute provides the scalar distance
-            between the spacecraft and the center of the central body (e.g., the center of Mars
-            when opperating in the Mars system).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>minimum_spacecraft_central_body_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_spacecraft_central_body_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_spacecraft_central_body_distance attribute provides 
-            the smallest value during the observation for the distance between the spacecraft and 
-            the center of the central body (e.g., the center of Mars when opperating in the 
-            Mars system).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_spacecraft_central_body_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_spacecraft_central_body_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_spacecraft_central_body_distance attribute provides 
-            the largest value during the observation for the distance between the spacecraft and 
-            the center of the central body (e.g., the center of Mars when opperating in the 
-            Mars system).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_spacecraft_central_body_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_spacecraft_central_body_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_spacecraft_central_body_distance attribute provides 
-            the scalar distance at the beginning of the observation (geometry_start_time_utc)
-            between the spacecraft and the center of the central body (e.g., the center 
-            of Mars when opperating in the Mars system).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_spacecraft_central_body_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_spacecraft_central_body_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_spacecraft_central_body_distance attribute provides 
-            the scalar distance at the end of the observation (geometry_stop_time_utc)
-            between the spacecraft and the center of the central body (e.g., the center 
-            of Mars when opperating in the Mars system).
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>spacecraft_geocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>spacecraft_geocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The spacecraft_geocentric_distance attribute provides 
-                    the scalar distance between the spacecraft and the center of Earth.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>minimum_spacecraft_geocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_spacecraft_geocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_spacecraft_geocentric_distance attribute provides 
-            the smallest value during the observation for the distance between the spacecraft and 
-            the center of Earth.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_spacecraft_geocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_spacecraft_geocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_spacecraft_geocentric_distance attribute provides 
-            the largest value during the observation for the distance between the spacecraft and 
-            the center of Earth.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_spacecraft_geocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_spacecraft_geocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_spacecraft_geocentric_distance attribute provides 
-            the scalar distance at the beginning of the observation (geometry_start_time_utc)
-            between the spacecraft and the center of Earth.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_spacecraft_geocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_spacecraft_geocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_spacecraft_geocentric_distance attribute provides 
-            the scalar distance at the end of the observation (geometry_stop_time_utc)
-            between the spacecraft and the center of Earth.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>spacecraft_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>spacecraft_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The spacecraft_heliocentric_distance attribute provides the
-            scalar distance between the spacecraft and the center of the Sun.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>    
-
-    <DD_Attribute>
-        <name>minimum_spacecraft_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>minimum_spacecraft_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The minimum_spacecraft_heliocentric_distance attribute provides 
-            the smallest value during the observation for the distance between the 
-            spacecraft and the center of the Sun.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>maximum_spacecraft_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>maximum_spacecraft_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The maximum_spacecraft_heliocentric_distance attribute provides 
-            the largest value during the observation for the distance between the 
-            spacecraft and the center of the Sun.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>start_spacecraft_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>start_spacecraft_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The start_spacecraft_heliocentric_distance attribute provides 
-            the scalar distance at the beginning of the observation (geometry_start_time_utc)
-            between the spacecraft and the center of the Sun.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>stop_spacecraft_heliocentric_distance</name>
-        <version_id>1.0</version_id>
-        <local_identifier>stop_spacecraft_heliocentric_distance</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The stop_spacecraft_heliocentric_distance attribute provides 
-            the scalar distance at the end of the observation (geometry_stop_time_utc)
-            between the spacecraft and the center of the Sun.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
 
 <!-- Attributes for the vector classes -->
   
@@ -4476,6 +3823,83 @@
 <!-- Classes Building Blocks section -->
 
 <!-- Global use classes  -->
+
+    <DD_Class>
+        <name>Distance_Min_Max_Range</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Distance_Min_Max_Range</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Defines a pair of values, which represent the highest and lowest values measured.</definition>
+        <DD_Association>
+            <identifier_reference>distance_minimum</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>distance_maximum</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Distance_Start_Stop_Range</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Distance_Start_Stop_Range</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Defines a pair of values, which represent the earliest and latest values measured.</definition>
+        <DD_Association>
+            <identifier_reference>distance_at_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>distance_at_stop</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Distance_Scalar</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Distance_Scalar</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Defines a single value</definition>
+        <DD_Association>
+            <identifier_reference>distance</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Distance</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Distance</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Defines a distance, as one of several possible types</definition>
+        <DD_Association>
+            <identifier_reference>distance_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>XSChoice#</identifier_reference>
+            <identifier_reference>Distance_Min_Max_Range</identifier_reference>
+            <identifier_reference>Distance_Start_Stop_Range</identifier_reference>
+            <identifier_reference>Distance_Scalar</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
 
     <DD_Class>
         <name>Body_Identification_Base</name>
@@ -5690,284 +5114,6 @@
         </DD_Association>
     </DD_Class>
 
-<!-- Distances_Specific class -->
-    
-    <DD_Class>
-        <name>Distances_Specific</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Distances_Specific</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Distances_Specific class is a container class for 
-        	specific distances defined in this dictionary.
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>XSChoice#</identifier_reference>
-            <identifier_reference>spacecraft_geocentric_distance</identifier_reference>
-            <identifier_reference>spacecraft_heliocentric_distance</identifier_reference>
-            <identifier_reference>spacecraft_central_body_distance</identifier_reference>
-            <identifier_reference>spacecraft_target_center_distance</identifier_reference>
-            <identifier_reference>spacecraft_target_boresight_intercept_distance</identifier_reference>
-            <identifier_reference>spacecraft_target_subspacecraft_distance</identifier_reference>
-            <identifier_reference>target_geocentric_distance</identifier_reference>
-            <identifier_reference>target_heliocentric_distance</identifier_reference>
-            <identifier_reference>target_ssb_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>10</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-    
-<!-- Distances_Min_Max class -->
-    
-    <DD_Class>
-        <name>Distances_Min_Max</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Distances_Min_Max</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Distances_Min_Max class is a container class for 
-        	named distances given as minimum-maximum pairs. For distance, if
-        	either the minimum or maximum parameter is given, both must be provided.
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>minimum_spacecraft_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_spacecraft_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_spacecraft_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_spacecraft_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_spacecraft_central_body_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_spacecraft_central_body_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_spacecraft_target_center_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_spacecraft_target_center_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_spacecraft_target_boresight_intercept_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_spacecraft_target_boresight_intercept_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_spacecraft_target_subspacecraft_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_spacecraft_target_subspacecraft_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_target_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_target_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_target_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_target_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>minimum_target_ssb_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>maximum_target_ssb_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-    
-<!-- Distances_Start_Stop class -->
-    
-    <DD_Class>
-        <name>Distances_Start_Stop</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Distances_Start_Stop</local_identifier>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The Distances_Start_Stop class is a container class for 
-        	named distances given as pairs corresponding to the beginning and 
-        	end of the observation. For a distance, if either the start or 
-        	stop parameter is given, both must be provided. 
-        	If any values from this class are included in the label, the 
-        	parameters geometry_start_time_utc and geometry_stop_time_utc must be 
-        	given in the enclosing Geometry_Orbiter class.
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>start_spacecraft_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_spacecraft_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_spacecraft_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_spacecraft_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_spacecraft_central_body_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_spacecraft_central_body_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_spacecraft_target_center_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_spacecraft_target_center_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_spacecraft_target_boresight_intercept_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_spacecraft_target_boresight_intercept_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_spacecraft_target_subspacecraft_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_spacecraft_target_subspacecraft_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_target_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_target_geocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_target_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_target_heliocentric_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>start_target_ssb_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>stop_target_ssb_distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>  
     
 <!-- Distances class  -->
 
@@ -5987,22 +5133,10 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>Distances_Specific</identifier_reference>
+            <identifier_reference>Distance</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-         </DD_Association>
-        <DD_Association>
-            <identifier_reference>Distances_Min_Max</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-         </DD_Association>
-        <DD_Association>
-            <identifier_reference>Distances_Start_Stop</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
          </DD_Association>
         <DD_Association>
             <identifier_reference>Distance_Generic</identifier_reference>
@@ -9589,208 +8723,4 @@
         </DD_Rule_Statement>
     </DD_Rule>
 
-    <DD_Rule>
-        <local_identifier>Distances_1</local_identifier>
-        <rule_context>geom:Distances_Min_Max</rule_context>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_spacecraft_geocentric_distance) and not (geom:maximum_spacecraft_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_geocentric_distance and geom:maximum_spacecraft_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_spacecraft_geocentric_distance) and not (geom:minimum_spacecraft_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_geocentric_distance and geom:maximum_spacecraft_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_spacecraft_heliocentric_distance) and not (geom:maximum_spacecraft_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_heliocentric_distance and geom:maximum_spacecraft_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_spacecraft_heliocentric_distance) and not (geom:minimum_spacecraft_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_heliocentric_distance and geom:maximum_spacecraft_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_spacecraft_central_body_distance) and not (geom:maximum_spacecraft_central_body_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_central_body_distance and geom:maximum_spacecraft_central_body_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_spacecraft_central_body_distance) and not (geom:minimum_spacecraft_central_body_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_central_body_distance and geom:maximum_spacecraft_central_body_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_spacecraft_target_center_distance) and not (geom:maximum_spacecraft_target_center_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_target_center_distance and geom:maximum_spacecraft_target_center_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_spacecraft_target_center_distance) and not (geom:minimum_spacecraft_target_center_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_target_center_distance and geom:maximum_spacecraft_target_center_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_spacecraft_target_boresight_intercept_distance) and not (geom:maximum_spacecraft_target_boresight_intercept_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_target_boresight_intercept_distance and geom:maximum_spacecraft_target_boresight_intercept_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_spacecraft_target_boresight_intercept_distance) and not (geom:minimum_spacecraft_target_boresight_intercept_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_target_boresight_intercept_distance and geom:maximum_spacecraft_target_boresight_intercept_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_spacecraft_target_subspacecraft_distance) and not (geom:maximum_spacecraft_target_subspacecraft_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_target_subspacecraft_distance and geom:maximum_spacecraft_target_subspacecraft_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_spacecraft_target_subspacecraft_distance) and not (geom:minimum_spacecraft_target_subspacecraft_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_spacecraft_target_subspacecraft_distance and geom:maximum_spacecraft_target_subspacecraft_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_target_geocentric_distance) and not (geom:maximum_target_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_target_geocentric_distance and geom:maximum_target_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_target_geocentric_distance) and not (geom:minimum_target_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_target_geocentric_distance and geom:maximum_target_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_target_heliocentric_distance) and not (geom:maximum_target_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_target_heliocentric_distance and geom:maximum_target_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_target_heliocentric_distance) and not (geom:minimum_target_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_target_heliocentric_distance and geom:maximum_target_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:minimum_target_ssb_distance) and not (geom:maximum_target_ssb_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_target_ssb_distance and geom:maximum_target_ssb_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:maximum_target_ssb_distance) and not (geom:minimum_target_ssb_distance))  then false() else true()</rule_test>
-            <rule_message>geom:minimum_target_ssb_distance and geom:maximum_target_ssb_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-    </DD_Rule>
-
-    <DD_Rule>
-        <local_identifier>Distances_2</local_identifier>
-        <rule_context>geom:Distances_Start_Stop</rule_context>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>ancestor::geom:Geometry_Orbiter/geom:geometry_start_time_utc and ancestor::geom:Geometry_Orbiter/geom:geometry_stop_time_utc</rule_test>
-            <rule_message>geom:If you use the Distances_Start_Stop class, you must give values for Geometry_Orbiter/geometry_start_time_utc and Geometry_Orbiter/geometry_stop_time_utc.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_spacecraft_geocentric_distance) and not (geom:stop_spacecraft_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_geocentric_distance and geom:stop_spacecraft_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_spacecraft_geocentric_distance) and not (geom:start_spacecraft_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_geocentric_distance and geom:stop_spacecraft_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_spacecraft_heliocentric_distance) and not (geom:stop_spacecraft_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_heliocentric_distance and geom:stop_spacecraft_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_spacecraft_heliocentric_distance) and not (geom:start_spacecraft_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_heliocentric_distance and geom:stop_spacecraft_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_spacecraft_central_body_distance) and not (geom:stop_spacecraft_central_body_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_central_body_distance and geom:stop_spacecraft_central_body_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_spacecraft_central_body_distance) and not (geom:start_spacecraft_central_body_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_central_body_distance and geom:stop_spacecraft_central_body_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_spacecraft_target_center_distance) and not (geom:stop_spacecraft_target_center_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_target_center_distance and geom:stop_spacecraft_target_center_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_spacecraft_target_center_distance) and not (geom:start_spacecraft_target_center_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_target_center_distance and geom:stop_spacecraft_target_center_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_spacecraft_target_boresight_intercept_distance) and not (geom:stop_spacecraft_target_boresight_intercept_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_target_boresight_intercept_distance and geom:stop_spacecraft_target_boresight_intercept_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_spacecraft_target_boresight_intercept_distance) and not (geom:start_spacecraft_target_boresight_intercept_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_target_boresight_intercept_distance and geom:stop_spacecraft_target_boresight_intercept_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_spacecraft_target_subspacecraft_distance) and not (geom:stop_spacecraft_target_subspacecraft_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_target_subspacecraft_distance and geom:stop_spacecraft_target_subspacecraft_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_spacecraft_target_subspacecraft_distance) and not (geom:start_spacecraft_target_subspacecraft_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_spacecraft_target_subspacecraft_distance and geom:stop_spacecraft_target_subspacecraft_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_target_geocentric_distance) and not (geom:stop_target_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_target_geocentric_distance and geom:stop_target_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_target_geocentric_distance) and not (geom:start_target_geocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_target_geocentric_distance and geom:stop_target_geocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_target_heliocentric_distance) and not (geom:stop_target_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_target_heliocentric_distance and geom:stop_target_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_target_heliocentric_distance) and not (geom:start_target_heliocentric_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_target_heliocentric_distance and geom:stop_target_heliocentric_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_target_ssb_distance) and not (geom:stop_target_ssb_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_target_ssb_distance and geom:stop_target_ssb_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_target_ssb_distance) and not (geom:start_target_ssb_distance))  then false() else true()</rule_test>
-            <rule_message>geom:start_target_ssb_distance and geom:stop_target_ssb_distance, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:start_time) and not (geom:stop_time))  then false() else true()</rule_test>
-            <rule_message>geom:start_time and geom:stop_time, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-        <DD_Rule_Statement>
-            <rule_type>Assert</rule_type>
-            <rule_test>if ((geom:stop_time) and not (geom:start_time))  then false() else true()</rule_test>
-            <rule_message>geom:start_time and geom:stop_time, are a pair; if you use one, you must use both.</rule_message>
-        </DD_Rule_Statement>
-    </DD_Rule>
 </Ingest_LDD> 
