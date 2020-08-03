@@ -846,179 +846,17 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-       
+
     <DD_Attribute>
-        <name>celestial_north_clock_angle</name>
+        <name>clock_angle</name>
         <version_id>1.0</version_id>
         <local_identifier>celestial_north_clock_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The celestial_north_clock_angle attribute specifies the 
-                    direction of celestial north at the center of an image. 
-                    It is measured from the 'upward' direction, clockwise to 
-                    the direction toward celestial north, assuming 
-                    the image is displayed as defined by the Display_Direction class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>celestial_east_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>celestial_east_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The celestial_east_clock_angle attribute specifies the 
-                    direction of celestial east at the center of an image. 
-                    It is measured from the 'upward' direction, clockwise to 
-                    the direction toward celestial east, assuming 
-                    the image is displayed as defined by the Display_Direction class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-   <DD_Attribute>
-        <name>ecliptic_north_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>ecliptic_north_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The ecliptic_north_clock_angle attribute specifies the 
-                    direction of ecliptic north at the center of an image. 
-                    It is measured from the 'upward' direction, clockwise to 
-                    the direction toward ecliptic north, assuming 
-                    the image is displayed as defined by the Display_Direction class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-   <DD_Attribute>
-        <name>ecliptic_east_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>ecliptic_east_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The ecliptic_east_clock_angle attribute specifies the 
-                    direction of ecliptic east at the center of an image. 
-                    It is measured from the 'upward' direction, clockwise to 
-                    the direction toward ecliptic east, assuming 
-                    the image is displayed as defined by the Display_Direction class.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-   <DD_Attribute>
-        <name>sun_direction_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>sun_direction_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The sun_direction_clock_angle attribute specifies the 
-                    direction of the sun as an angle measured from a line 'upward'   
-                    from the center of the field of view, clockwise to 
-                    the direction toward sun, assuming 
-                    the image is displayed as defined by the Display_Direction class. 
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>central_body_positive_pole_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>central_body_positive_pole_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The central_body_positive_pole_clock_angle element specifies 
-            the direction of the central body's rotation axis in an image. It is 
-            measured from the 'upward' direction in the image, clockwise to the direction of 
-            the positive rotational pole as projected into the image plane, assuming 
-            the image is displayed as defined by the Display_Direction class. 
-            The positive pole is defined as the pole toward which the thumb points when the  
-            fingers of the right hand are curled in the body's direction of rotation.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>target_positive_pole_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>target_positive_pole_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The target_positive_pole_clock_angle element specifies 
-            the direction of the target body's rotation axis in an image. It is 
-            measured from the 'upward' direction in the image, clockwise to the direction of 
-            the positive rotational pole as projected into the image plane, assuming 
-            the image is displayed as defined by the Display_Direction class. 
-            The positive pole is defined as the pole toward which the thumb points when the  
-            fingers of the right hand are curled in the body's direction of rotation.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-    
-    <DD_Attribute>
-        <name>target_north_pole_clock_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>target_north_pole_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The target_north_pole_clock_angle element specifies 
-            the direction of the target body's rotation axis in an image. It is 
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Placeholder. It is 
             measured from the 'upward' direction in the image, clockwise to the direction of 
             the northern rotational pole as projected into the image plane, assuming 
             the image is displayed as defined by the Display_Direction class. 
-            The north pole of a planet or any of its satellites in the solar system is 
-            the pole of the rotation axis that is in the same celestial hemisphere 
-            relative to the invariable plane of the solar system as Earth's North pole.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1029,32 +867,71 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
-        <name>central_body_north_pole_clock_angle</name>
+        <name>clock_angle_type</name>
         <version_id>1.0</version_id>
-        <local_identifier>central_body_north_pole_clock_angle</local_identifier>
+        <local_identifier>clock_angle_type</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The central_body_north_pole_clock_angle element specifies 
-            the direction of the central body's (e.g., planet's)rotation axis in an image. It is 
-            measured from the 'upward' direction in the image, clockwise to the direction of 
-            the northern rotational pole as projected into the image plane, assuming 
-            the image is displayed as defined by the Display_Direction class. 
-            The north pole of a planet or any of its satellites in the solar system is 
-            the pole of the rotation axis that is in the same celestial hemisphere 
-            relative to the invariable plane of the solar system as Earth's North pole.
-        </definition>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Placeholder</definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <maximum_value>360</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>celestial_north_clock_angle</value>
+                <value_meaning>the 
+                    direction of celestial north at the center of an image.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>celestial_east_clock_angle</value>
+                <value_meaning>the 
+                    direction of celestial east at the center of an image.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>ecliptic_north_clock_angle</value>
+                <value_meaning>the 
+                    direction of ecliptic north at the center of an image.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>ecliptic_east_clock_angle</value>
+                <value_meaning>the 
+                    direction of ecliptic east at the center of an image.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>sun_direction_clock_angle</value>
+                <value_meaning>the 
+                    direction of the sun</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>central_body_positive_pole_clock_angle</value>
+                <value_meaning>the direction of the central body's rotation axis in an image.
+                    The positive pole is defined as the pole toward which the thumb points when the  
+                    fingers of the right hand are curled in the body's direction of rotation.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>target_positive_pole_clock_angle</value>
+                <value_meaning>the direction of the target body's rotation axis in an image.
+                    The positive pole is defined as the pole toward which the thumb points when the  
+                    fingers of the right hand are curled in the body's direction of rotation.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>target_north_pole_clock_angle</value>
+                <value_meaning>the direction of the target body's rotation axis in an image.
+                    The north pole of a planet or any of its satellites in the solar system is 
+                    the pole of the rotation axis that is in the same celestial hemisphere 
+                    relative to the invariable plane of the solar system as Earth's North pole.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>central_body_north_pole_clock_angle</value>
+                <value_meaning>the direction of the central body's (e.g., planet's)rotation axis in an image.
+                    The north pole of a planet or any of its satellites in the solar system is 
+                    the pole of the rotation axis that is in the same celestial hemisphere 
+                    relative to the invariable plane of the solar system as Earth's North pole.</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+        
     <DD_Attribute>
         <name>qcos</name>
         <version_id>1.0</version_id>
@@ -5418,7 +5295,7 @@
 
     <DD_Class>
         <name>Object_Orientation_Clock_Angles</name>
-        <version_id>1.1</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Object_Orientation_Clock_Angles</local_identifier>
         <submitter_name>Anne Raugh</submitter_name>
         <definition>The Object_Orientation_Clock_Angles class provides several 
@@ -5429,21 +5306,36 @@
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
        <DD_Association>
-           <identifier_reference>XSChoice#</identifier_reference>
-           <identifier_reference>celestial_north_clock_angle</identifier_reference>
-           <identifier_reference>celestial_east_clock_angle</identifier_reference>
-           <identifier_reference>ecliptic_north_clock_angle</identifier_reference>
-           <identifier_reference>ecliptic_east_clock_angle</identifier_reference>
-           <identifier_reference>central_body_north_pole_clock_angle</identifier_reference>
-           <identifier_reference>central_body_positive_pole_clock_angle</identifier_reference>
-           <identifier_reference>target_north_pole_clock_angle</identifier_reference>
-           <identifier_reference>target_positive_pole_clock_angle</identifier_reference>
-           <identifier_reference>sun_direction_clock_angle</identifier_reference>
-            <reference_type>attribute_of</reference_type>
+           <identifier_reference>Object_Orientation_Clock_Angle</identifier_reference>
+            <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>10</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
    </DD_Class>
+
+   <DD_Class>
+    <name>Object_Orientation_Clock_Angle</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Object_Orientation_Clock_Angle</local_identifier>
+    <submitter_name>Jesse Stone</submitter_name>
+    <definition>
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+        <identifier_reference>clock_angle_type</identifier_reference>
+         <reference_type>attribute_of</reference_type>
+         <minimum_occurrences>1</minimum_occurrences>
+         <maximum_occurrences>1</maximum_occurrences>
+     </DD_Association>
+    <DD_Association>
+       <identifier_reference>clock_angle</identifier_reference>
+        <reference_type>attribute_of</reference_type>
+        <minimum_occurrences>1</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+</DD_Class>
+
     
 <!-- Image_Display_Geometry class  -->
 
