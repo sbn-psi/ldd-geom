@@ -7291,7 +7291,7 @@
         <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-        <identifier_reference>Vector_Planetocentic_Position_Extended_Base</identifier_reference>
+        <identifier_reference>Vector_Planetocentric_Position_Extended_Base</identifier_reference>
         <reference_type>component_of</reference_type>
         <minimum_occurrences>1</minimum_occurrences>
         <maximum_occurrences>1</maximum_occurrences>
@@ -7415,7 +7415,7 @@
     <abstract_flag>false</abstract_flag>
     <element_flag>false</element_flag>
     <DD_Association>
-        <identifier_reference>Vector_Planetocentic_Position_Extended_Base</identifier_reference>
+        <identifier_reference>Vector_Planetocentric_Position_Extended_Base</identifier_reference>
         <reference_type>component_of</reference_type>
         <minimum_occurrences>1</minimum_occurrences>
         <maximum_occurrences>1</maximum_occurrences>
